@@ -23,3 +23,16 @@ for file in $(find . -type f -name '*.js'); do
 done
 
 echo "Updated _commonjsHelpers file and import references"
+
+# Check if dist directory exists at ~/Desktop
+desktop_dist=~/Desktop/dist
+
+if [ -d "$desktop_dist" ]; then
+  # Remove the existing dist directory at ~/Desktop
+  rm -rf $desktop_dist
+fi
+
+# Copy the new dist directory to ~/Desktop
+cp -R . $desktop_dist
+
+echo "Copied dist directory to ~/Desktop"

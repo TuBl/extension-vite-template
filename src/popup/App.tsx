@@ -1,11 +1,10 @@
 import React from "react";
-import { browser } from "webextension-polyfill-ts";
-
+import { tabs as browserTabs } from "webextension-polyfill";
 
 const App: React.FC = () => {
   const handleClick = () => {
-    browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-      browser.tabs.sendMessage(tabs[0].id!, { text: "buttonClicked" });
+    browserTabs.query({ active: true, currentWindow: true }).then((tabs) => {
+      browserTabs.sendMessage(tabs[0].id!, { text: "buttonClicked" });
     });
   };
 
@@ -13,9 +12,10 @@ const App: React.FC = () => {
     <div>
       <h1>My Vite React Extension</h1>
       <p>Click the button to change the background color.</p>
-      <button onClick={handleClick}>Change Background Color</button>
+      <button onClick={handleClick}>Change Background Color 2</button>
     </div>
   );
 };
 
 export default App;
+

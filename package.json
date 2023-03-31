@@ -6,15 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --mode chrome-extension && pnpm postbuild",
-    "postbuild" : "time ./rename_commonjs_helpers.sh",
+    "postbuild": "time ./rename_commonjs_helpers.sh",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/webextension-polyfill": "^0.10.0",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "vite-plugin-chrome-extension": "^0.0.7",
-    "webextension-polyfill-ts": "^0.26.0"
+    "webextension-polyfill": "^0.10.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",

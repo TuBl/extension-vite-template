@@ -1,6 +1,6 @@
-import { browser } from "webextension-polyfill-ts";
+import { runtime } from "webextension-polyfill";
 
-browser.runtime.onMessage.addListener((request) => {
+runtime.onMessage.addListener((request) => {
   if (request.text === "buttonClicked") {
     document.body.style.backgroundColor = "red";
   }
