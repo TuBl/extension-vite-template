@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --mode chrome-extension",
+    "build": "tsc && vite build --mode chrome-extension && pnpm postbuild",
+    "postbuild" : "time ./rename_commonjs_helpers.sh",
     "preview": "vite preview"
   },
   "dependencies": {
